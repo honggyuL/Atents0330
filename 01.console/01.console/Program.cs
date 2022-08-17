@@ -124,7 +124,7 @@ namespace _01.console
             string result;
             string name = "너굴맨";
             int hp = 2;
-            int level;
+            int level = 3;
             float exp;
 
 
@@ -136,19 +136,93 @@ namespace _01.console
 
 
 
-            // 제어문(Control statement)
+            // 제어문(Control statement) - 조건문(if, switch), 반복문
             // 실행되는 코드 라인을 변경할 수 있는 코드
 
-            hp = 5;
+            hp = 10;
             if (hp < 3) // hp가 2이기 떄문에 참이다. 따라서 중괄호 사이에 코드가 실행된다.
             {
-                Console.WriteLine("HP가 부족합니다."); //참일 때 실행되는 코드
+                Console.WriteLine("HP가 부족합니다."); //  (hp < 3) 참일 때 실행되는 코드
+            }
+            else if(hp < 10)
+            {
+                Console.WriteLine("HP가 적당합니다."); // (hp < 3)는 거짓이고 (hp < 10)는 참일 때 실행되는 코드
             }
             else
             {
-                Console.WriteLine("HP가 충분합니다."); //거짓일 떄 실행되는 코드
+                Console.WriteLine("HP가 충분합니다."); // (hp < 3)와 (hp < 10)가 거짓일 떄 실행되는 코드
 
             }
+
+            switch(hp)
+            {
+                case 0: //hp가 0일때
+                    Console.WriteLine("HP가 0입니다.");
+                    break;
+                    case 5: // hp가 5일때
+                    Console.WriteLine("HP가 5입니다.");
+                    break;
+                default: //위에 설정되지 않는 모든 경우
+                    Console.WriteLine("HP가 0과 5가 아닙니다");
+                    break;
+            }
+
+
+            //exp = 0.5f;
+            //Console.WriteLine("경험치를 추가합니다.");
+            //Console.Write("추가할 경험치 : ");
+            //string temp = Console.ReadLine();
+
+            //float tempExp;
+            //float.TryParse(temp, out tempExp);
+
+            //if ( (exp + tempExp) > 1.0f)
+            //{
+            //    Console.WriteLine("레벨업!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"현재 경험치 : {exp+tempExp}");
+            //}
+
+            level = 1;
+            while(level < 3) //소괄호() 안의 조건이 참이면 중괄호{} 사이의 코드를 실행하는 statement
+            {
+                Console.WriteLine($"현재레벨 : {level}");
+                level++;     // level = level + 1;    // level += 1;
+               // level += 2; //level에다 2를 더해서 레벨에 넣어라
+            }
+
+
+            // i는 0에서 시작해서 3보다 작으면 계쏙 {}사이의 코드를 실행한다. i는{}사이의 코드를 실행할 떄마다 1씩 증가한다.
+            for (int i=0; i<3; i++)
+            {
+                Console.WriteLine($"현재 HP : {hp}");
+                hp += 10;
+            }
+            Console.WriteLine($"최종 HP : {hp}");
+
+
+            level = 1;
+            do
+            {
+                Console.WriteLine($"현재 레벨 : {level}");
+                level++;
+
+                if(level == 2)  //1+1 == 2  .++은 양쪽이 같다라는 의미
+                {
+                    break;
+                }
+                level++;
+            }
+            while (level < 10);
+            Console.WriteLine($"최종 Level : {level}");
+
+
+
+
+
+
             Console.ReadKey();                 // 키 입력 대기하는 코드
         }
     }
