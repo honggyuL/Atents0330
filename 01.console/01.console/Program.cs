@@ -47,6 +47,34 @@ namespace _01.console
             bool b1 = true;
             bool b2 = false;
 
+            int level = 1;
+            int hp = 10;
+            float exp = 0.9f;
+            string name = "너굴맨";
+            string result = $"{name}의 레벨은 {level}이고 HP는 {hp}이고 exp는 {exp}다.";
+            Console.WriteLine(result);
+            Console.WriteLine($"{name}의 레벨은 {level}이고 HP는 {hp}이고 exp는 {exp}다.");
+
+            Console.Write("이름을 입력하세요 : ");
+            name = Console.ReadLine();
+            Console.Write($"{ name}의 레벨을 입력하세요 : ");
+            string temp = Console.ReadLine();
+            level = int.Parse(temp); // string을 int로 변경해주는 코드
+            
+            // 너굴맨의레벨은 1이고 hp는 10이고 exp는 0.9다.
+
+            string str5 = "너굴맨";
+            string str6 = "레벨 1";
+            string str7 = "hp 10";
+            string str8 = "exp 0.9";
+            string str9 = $"너굴맨 {a}";
+            Console.WriteLine(str9);
+            string str10 = str5 + str6 + str7 + str8;
+            Console.WriteLine(str10);
+
+
+               
+
             // Console.WriteLine(str);
 
             Console.ReadKey();                 // 키 입력 대기하는 코드
