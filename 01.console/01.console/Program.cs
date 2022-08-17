@@ -219,7 +219,25 @@ namespace _01.console
             Console.WriteLine($"최종 Level : {level}");
 
 
+            // 실습 : exp가 1을 넘어 레벨업을 할 때까지 계속 추가 경험치를 입력하도록 하는 코드를 작성하기
+            exp = 0.0f;
+            Console.WriteLine($"현재 경험치 : {exp}");
 
+            while (1.0f > exp)
+            {
+                Console.WriteLine($"경험치를 추가 해야합니다. 현재 경험치 : {exp}");
+                Console.Write("추가할 경험치 : ");
+                string temp = Console.ReadLine();  //입력받기
+                float tempFloat = 0.0f;
+                float.TryParse(temp, out tempFloat); // 입력 받은 string을 float으로 변경
+
+                exp = +tempFloat;   // 입력 받은 값을 exp에 추가
+            }
+
+            Console.WriteLine("레벨업");
+
+        // while이 끝났다라는 이야기는 exp가 1보다 크거나 같아졌다라는 의미
+           
 
 
 
